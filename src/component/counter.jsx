@@ -14,10 +14,21 @@ class Counter extends Component{
         return <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
     }
 
+    constructor(){
+        super();
+        this.handleIncrement = this.handleIncrement.bind(this);
+    }
+
+    handleIncrement(){
+        this.setState({count: this.state.count+1});
+    }
+
     render() {
         return (
            <React.Fragment>
+               <span className="badge badge-primary">{this.state.count}</span>
                {this.renderTags()}
+               <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Increment</button>
            </React.Fragment> 
         );
     }
