@@ -30,7 +30,9 @@ class Counter extends Component{
                {this.props.children}
                <span className="badge badge-primary">{this.state.count}</span>
                {this.renderTags()}
-               <button onClick={() => this.handleIncrement({'id':1})} className="btn btn-secondary btn-sm">Increment</button>
+               <button onClick={() => this.handleIncrement({'id':1})} 
+               className="btn btn-secondary btn-sm">Increment</button>
+               <button onClick={this.props.onDelete} class="btn btn-danger btn-sm">Delete</button>
            </React.Fragment> 
         );
     }
